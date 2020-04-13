@@ -1,0 +1,13 @@
+.chat__container__item__chatname {
+  cursor: move;
+  background-color: #95ffb8;
+  border: 1px solid #95ffb8;
+  border-radius: 3px 3px 0 0;
+  padding: 0 7px 0 8px;
+}
+
+.chat__container__item__chatname__name {
+  margin: 5px;
+  width: fit-content;
+  font-weight: 600;
+}

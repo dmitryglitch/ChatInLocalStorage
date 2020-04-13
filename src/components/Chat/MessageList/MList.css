@@ -1,0 +1,6 @@
+.chat__container__item__messagelist {
+  height: 450px;
+  border-top: none;
+  background-color: #eef5fd;
+  overflow: hidden;
+}
