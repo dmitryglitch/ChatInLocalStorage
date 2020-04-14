@@ -1,4 +1,5 @@
 const initialState = {
+  isStorage: false,
   chats: [
       {
           id: 0,
@@ -25,22 +26,10 @@ const initialState = {
 
 const localstorage = (state = initialState, action) => {
   switch (action.type) {
-    case "SEND_MESSAGE":
+    case "INIT_LOCALSTORAGE":
       return {
         ...state,
-        isFetching: false,
-        isError: null,
-        isLogin: true,
-        id: action.payload.id,
-        date: action.payload.date,
-        endSample: action.payload.endSample,
-        answerUser: action.payload.answerUser,
-        answerAdmin: action.payload.answerAdmin,
-        statisticsAdmin: action.payload.statisticsAdmin,
-        statistics: action.payload.statistics,
-        id_answer: action.payload.id_answer,
-        result: action.payload.result,
-        massProducts: action.payload.massProducts,
+        isStorage: true,
       };
 
     default:
