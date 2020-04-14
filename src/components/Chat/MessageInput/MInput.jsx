@@ -1,4 +1,5 @@
 import React from "react";
+import './MInput.css'
 
 const MInput = ({}) => {
   return (

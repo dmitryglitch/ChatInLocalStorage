@@ -1,0 +1,7 @@
+.chat__container__item__input input {
+  border: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 0 5px 5px;
+  outline: none;
+}
