@@ -5,16 +5,23 @@ import { connect } from "react-redux";
 import "./App.css";
 import Chat from "../components/Chat/Chat.jsx";
 
-import { initLocalStorage } from "../actions/localstorage.js";
+import { initLocalStorage, initStore } from "../actions/localstorage.js";
 
 class App extends Component {
   componentDidMount() {
-    
+
     // проверка на первый запуск приложения
     // если нет записи в локальном хранилище, то мы записываем наш инициальный стор
+    // если напротив есть, то актуализируем наш стор
+    const { chats, users, onInitLocalStorage, onInitStore } = this.props;
+
     if (localStorage.getItem("chats") == null) {
-      const { chats, users } = this.props;
-      this.props.onInitLocalStorage(chats, users);
+      onInitLocalStorage(chats, users);
+    } else {
+      const localStorageChats = JSON.parse(localStorage.getItem("chats"));
+      const localStorageUsers = JSON.parse(localStorage.getItem("users"));
+
+      onInitStore(localStorageChats, localStorageUsers);
     }
   }
 
@@ -44,6 +51,9 @@ export default connect(
   (dispatch) => ({
     onInitLocalStorage: (chats, users) => {
       dispatch(initLocalStorage(chats, users));
+    },
+    onInitStore: (chats, users) => {
+      dispatch(initStore(chats, users));
     },
     onSendMessage: () => {
       dispatch();

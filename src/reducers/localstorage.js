@@ -1,18 +1,18 @@
 const initialState = {
   isStorage: false,
   chats: [
-      {
-          id: 0,
-          chatName: 'Question #1',
-          idMembar: 1,
-          messageList: [
-              {
-                  idMessage: 0,
-                  text: 'Привет',
-                  idSender: 1 
-              }
-          ]
-      }
+    {
+      id: 0,
+      chatName: "Question #1",
+      idMembar: 1,
+      messageList: [
+        {
+          idMessage: 0,
+          text: "Привет",
+          idSender: 1,
+        },
+      ],
+    },
   ],
   users: [
     {
@@ -29,9 +29,15 @@ const localstorage = (state = initialState, action) => {
     case "INIT_LOCALSTORAGE":
       return {
         ...state,
-        isStorage: true,
+        isStorage: action.payload,
       };
-
+    case "INIT_STORE":
+      return {
+        ...state,
+        isStorage: true,
+        chats: action.payload.chats,
+        users: action.payload.users,
+      };
     default:
       return state;
   }
