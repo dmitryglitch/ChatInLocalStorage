@@ -9,7 +9,6 @@ import { initLocalStorage, initStore } from "../actions/localstorage.js";
 
 class App extends Component {
   componentDidMount() {
-
     // проверка на первый запуск приложения
     // если нет записи в локальном хранилище, то мы записываем наш инициальный стор
     // если напротив есть, то актуализируем наш стор
@@ -31,10 +30,19 @@ class App extends Component {
         <div className="chat">
           <div className="chat__container">
             <div className="chat__container__item user">
-              <Chat type="user" />
+              <Chat
+                type="user"
+                userId={this.props.users[0].id}
+                chats={this.props.chats}
+                users={this.props.users}
+              />
             </div>
             <div className="chat__container__item supporter">
-              <Chat type="supporter" />
+              <Chat
+                type="supporter"
+                chats={this.props.chats}
+                users={this.props.users}
+              />
             </div>
           </div>
         </div>
