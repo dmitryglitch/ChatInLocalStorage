@@ -1,0 +1,26 @@
+.chat__container__item__messagelist__message__avatar img {
+  width: 50px;
+  height: auto;
+  border-radius: 50px;
+}
+
+.chat__container__item__messagelist__message__right {
+  display: flex;
+  padding: 5px;
+  margin: 5px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.chat__container__item__messagelist__message__left {
+  display: flex;
+  padding: 5px;
+  margin: 5px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.chat__container__item__messagelist__message__text p {
+  margin: 8px;
+  text-align: start;
+}

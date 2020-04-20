@@ -1,11 +1,22 @@
 import React from "react";
-import './MInput.css'
+import "./Message.css";
 
-const Message = ({type}) => {
+const Message = ({ text, type, avatarUrl }) => {
   return (
     <>
-      <div className={ type === 'user' ? 'chat__container__item__messagelist__' : '' }>
-        <input type="text"/>
+      <div
+        className={
+          type === "left"
+            ? "chat__container__item__messagelist__message__left"
+            : "chat__container__item__messagelist__message__right"
+        }
+      >
+        <div className="chat__container__item__messagelist__message__avatar">
+          <img src={avatarUrl} alt="" />
+        </div>
+        <div className="chat__container__item__messagelist__message__text">
+          <p> {text} </p>
+        </div>
       </div>
     </>
   );

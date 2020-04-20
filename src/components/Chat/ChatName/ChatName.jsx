@@ -1,11 +1,11 @@
 import React from "react";
-import './ChatName.css'
+import "./ChatName.css";
 
-const ChatName = ({ }) => {
+const ChatName = ({ chatName }) => {
   return (
     <>
       <div className="chat__container__item__chatname">
-        <p className="chat__container__item__chatname__name" >Test</p>
+        <p className="chat__container__item__chatname__name">{chatName}</p>
       </div>
     </>
   );

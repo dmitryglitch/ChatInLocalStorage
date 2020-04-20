@@ -7,8 +7,8 @@ export const initLocalStorage = (chats, users) => {
 
 export const initStore = (chats, users) => {
   let data = {
-    chats: chats,
-    users: users,
+    chats,
+    users,
   };
     
   return { type: "INIT_STORE", payload: data };

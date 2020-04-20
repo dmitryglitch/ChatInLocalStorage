@@ -6,6 +6,7 @@ import "./App.css";
 import Chat from "../components/Chat/Chat.jsx";
 
 import { initLocalStorage, initStore } from "../actions/localstorage.js";
+import { sendMessage } from "../actions/message.js";
 
 class App extends Component {
   componentDidMount() {
@@ -32,16 +33,19 @@ class App extends Component {
             <div className="chat__container__item user">
               <Chat
                 type="user"
-                userId={this.props.users[0].id}
+                userId={this.props.users[1].id}
                 chats={this.props.chats}
                 users={this.props.users}
+                onSendMessage={this.props.onSendMessage}
               />
             </div>
             <div className="chat__container__item supporter">
               <Chat
                 type="supporter"
+                userId={this.props.users[0].id}
                 chats={this.props.chats}
                 users={this.props.users}
+                onSendMessage={this.props.onSendMessage}
               />
             </div>
           </div>
@@ -63,8 +67,8 @@ export default connect(
     onInitStore: (chats, users) => {
       dispatch(initStore(chats, users));
     },
-    onSendMessage: () => {
-      dispatch();
+    onSendMessage: (idSender, text) => {
+      dispatch(sendMessage(idSender, text));
     },
   })
 )(App);

@@ -1,8 +1,11 @@
-export const sendMessage = (idSender, text) => (dispatch) => {
+export const sendMessage = (text, idSender) => {
   let data = {
-    idSender: idSender,
     text: text,
+    idSender: idSender,
   };
 
-  dispatch({ type: "SEND_MESSAGE", payload: data });
+  return {
+    type: "SEND_MESSAGE",
+    payload: data,
+  };
 };

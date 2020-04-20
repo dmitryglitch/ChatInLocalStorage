@@ -1,20 +1,31 @@
 const initialState = {
   isStorage: false,
-  chats: [
+  chats: {
+    id: 0,
+    chatName: "Question #1",
+    idMember: 1,
+    messageList: [
+      {
+        text: "Привет",
+        idSender: 1,
+      },
+      {
+        text: "Давай протестируем наш новый чат для общения с тех.поддержкой?",
+        idSender: 1,
+      },
+      {
+        text: "Давай приступим!",
+        idSender: 0,
+      },
+    ],
+  },
+  users: [
     {
       id: 0,
-      chatName: "Question #1",
-      idMembar: 1,
-      messageList: [
-        {
-          idMessage: 0,
-          text: "Привет",
-          idSender: 1,
-        },
-      ],
+      name: "Support Masha",
+      avatarUrl:
+        "https://cdn0.iconfinder.com/data/icons/user-pictures/100/supportfemale-2-512.png",
     },
-  ],
-  users: [
     {
       id: 1,
       name: "Dmitry Bykov",
@@ -37,6 +48,14 @@ const localstorage = (state = initialState, action) => {
         isStorage: true,
         chats: action.payload.chats,
         users: action.payload.users,
+      };
+    case "SEND_MESSAGE":
+      return {
+        ...state,
+        chats: {
+          ...state.chats,
+          messageList: state.chats.messageList.concat(action.payload),
+        },
       };
     default:
       return state;
