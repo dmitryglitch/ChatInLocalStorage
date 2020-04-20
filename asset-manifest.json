@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ChatInLocalStorage/static/css/main.eb79979c.chunk.css",
+    "main.js": "/ChatInLocalStorage/static/js/main.e77596e6.chunk.js",
+    "main.js.map": "/ChatInLocalStorage/static/js/main.e77596e6.chunk.js.map",
+    "runtime-main.js": "/ChatInLocalStorage/static/js/runtime-main.213247d7.js",
+    "runtime-main.js.map": "/ChatInLocalStorage/static/js/runtime-main.213247d7.js.map",
+    "static/js/2.932c613d.chunk.js": "/ChatInLocalStorage/static/js/2.932c613d.chunk.js",
+    "static/js/2.932c613d.chunk.js.map": "/ChatInLocalStorage/static/js/2.932c613d.chunk.js.map",
+    "index.html": "/ChatInLocalStorage/index.html",
+    "precache-manifest.91fde6d1f1b97489c23072c6025e111a.js": "/ChatInLocalStorage/precache-manifest.91fde6d1f1b97489c23072c6025e111a.js",
+    "service-worker.js": "/ChatInLocalStorage/service-worker.js",
+    "static/css/main.eb79979c.chunk.css.map": "/ChatInLocalStorage/static/css/main.eb79979c.chunk.css.map",
+    "static/js/2.932c613d.chunk.js.LICENSE.txt": "/ChatInLocalStorage/static/js/2.932c613d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.213247d7.js",
+    "static/js/2.932c613d.chunk.js",
+    "static/css/main.eb79979c.chunk.css",
+    "static/js/main.e77596e6.chunk.js"
+  ]
+}
