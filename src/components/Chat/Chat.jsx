@@ -10,7 +10,6 @@ class Chat extends Component {
     inputValue: "",
   };
 
-  // сохранение введенного сообщения в инпуте
   handleInput = (value) => {
     this.setState({
       inputValue: value,
@@ -23,12 +22,13 @@ class Chat extends Component {
       idSender: this.props.userId,
     };
 
+    // вызываем action на отправку нового сообщения в стор и записываем его в localstorage
     this.props.onSendMessage(newMessage.text, newMessage.idSender);
-    let chat = JSON.parse(localStorage.getItem("chats"))
-    chat.messageList.push(newMessage)
-    localStorage.setItem('chats', JSON.stringify(chat))
-    
+    let chat = JSON.parse(localStorage.getItem("chats"));
+    chat.messageList.push(newMessage);
+    localStorage.setItem("chats", JSON.stringify(chat));
 
+    // очищаем наш инпут от прошлого сообщения
     this.setState({ inputValue: "" });
   };
 
